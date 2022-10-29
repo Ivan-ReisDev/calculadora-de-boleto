@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/normalize.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/responsivo.css">
+
+    <title>Calcule aqui</title>
+</head>
+
+<body>
+    <main>
+        <div class="box-left">
+            <img src="src/img/logo-calcule-aqui.png" alt="" class="logo">
+
+            <div class="box-center">
+                <div class="box-subinterno">
+                    <div class="box-interno">
+                        <label for="vencimento">Vencimento do boleto:</label>
+                        <input onchange=Vencimento() type="date" name="vencimento" id="vencimento" required>
+                        <div class="quadrado"><img src="src/img/vencimento.png"  required alt=""></div>
+                    </div>
+
+                    <div class="box-interno">
+                        <label for="valor-boleto">Valor do boleto:</label>
+                        <input onchange=ValorDoBoleto() type="number"  id="valor-boleto" placeholder="" required>
+                        <div class="quadrado"><img src="src/img/money.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="box-subinterno-um">
+                    <div class="box-interno">
+                        <label for="pagamento">Data para pagamento:</label>
+                        <input onchange= DataPagamento() type="date" name="pagamento" id="pagamento" placeholder="" required>
+                        <div class="quadrado"> <img src="src/img/pagamento.png" alt=""></div>
+                    </div>
+                    <div class="box-interno">
+                        <label for="porcentagem">Porcentagem da multa:</label>
+                        <select name="porcentagem" id="lista-multa">
+                            <option value="0">Selecione</option>
+                            <option value="0.02">2%</option>
+                            <option value="0.05">5%</option>
+                            <option value="0.1">10%</option>
+                            <option value="0.15">15%</option>
+                            <option value="0.2">20%</option>
+                            <option value="0.25">25%</option>
+                            <option value="0.3">30%</option>
+                        </select>
+                        <div class="quadrado"> <img src="src/img/porcentagem.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+          <button class="bnt" onclick="calcular()">Calcular</button>
+            <div class="tabela">
+
+                <table class="tabela-inicio">
+                    <thead>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dias em atraso:</td>
+                            <td id="diasAtras">0</td>
+                        </tr>
+                        <tr class="cinza">
+                            <td>Valor total da multa:</td>
+                            <td id="valorMulta">R$ 0</td>
+                        </tr>
+                        <tr>
+                            <td>Valor total dos juros:</td>
+                            <td id="juros">0</td>
+                        </tr>
+                        <tr class="cinza">
+                            <td>Valor total do boleto:</td>
+                            <td id="valor">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="box-right">
+
+        </div>
+    </main>
+
+    <script src="src/javascript/main.js"></script>
+</body>
+</html>

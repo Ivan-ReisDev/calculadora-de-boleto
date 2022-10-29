@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main {
+    display: flex;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 30px;
+    color: #000000;
+}
+
+input,
+select {
+    width: 70%;
+    min-height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #cecece;
+    padding-left: 5px;
+}
+
+.box-left {
+    text-align: center;
+    height: 100vh;
+    width: 50vw;
+    background-color: rgb(245, 245, 253);
+}
+
+.box-left img {
+    width: 400px;
+    margin-top: 3em;
+}
+
+.box-right {
+    height: 100vh;
+    width: 50vw;
+    background-color: #061ba8;
+    background-image: url(/src/img/9c6f97db-0b4b-4a82-a3e5-f95e8a94cd9c.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box-center {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-interno {
+    background-color: #fffbe0;
+    border: 2px solid #061ba8;
+    border-radius: 5px;
+    box-shadow: 10px 10px 25px rgb(146, 146, 146);
+    width: 250px;
+    height: 90px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadrado img {
+    border-radius: 5px;
+    position: relative;
+    width: 50px;
+    right: 120px;
+    bottom: 40px;
+    margin: 0;
+}
+
+.tabela-inicio {
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    color: #000000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.637);
+}
+
+.tabela {
+    text-align: justify;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+}
+
+.cinza {
+    background-color: #cacaca;
+}
+
+thead {
+    background-color: #061ba8;
+    height: 25px;
+    border-radius: 5px;
+}
+
+thead th {
+    color: white;
+    letter-spacing: 1px;
+    padding-left: 10px;
+}
+
+tbody td,
+tbody th {
+    padding-left: 10px;
+}
+
+.bnt {
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #061ba8;
+    border: none;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all .6s;
+    margin-top: 1em;
+}
+
+.bnt:hover {
+    background-color: #0022ff;
+    box-shadow: 1px 1px 50px #0022ff;
+}

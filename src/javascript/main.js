@@ -54,7 +54,7 @@ function calcularDias(){
 
      //valor total boleto
      var somaMultaBoleto = (valorTotalMulta + valoBoleto);
-     let jurosTotal = (100 * 1/100/31 * days)
+     let jurosTotal = (100 * 1/100/30 * days)
      let JurosEmReal = jurosTotal * valoBoleto / 100;
      let total1 = somaMultaBoleto + JurosEmReal;
      valor2.textContent = total1.toFixed(2);  
@@ -63,13 +63,13 @@ function calcularDias(){
 
    if(days <= 0){
     diasAtrasados.textContent = 0;
-    let jurosTotal = (100 * 1/100/31 * 0)
+    let jurosTotal = (100 * 1/100/30 * 0)
     jrs.textContent = jurosTotal.toFixed(2);
     jrs.textContent = jurosTotal.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})
    }
    else{
     diasAtrasados.textContent = Math.abs(days);
-    let jurosTotal = (100 * 1/100/31 * days)
+    let jurosTotal = (100 * 1/100/30 * days)
     let JurosEmReal = valoBoleto * jurosTotal / 100;
     jrs.textContent = JurosEmReal.toFixed(2);
     jrs.textContent = JurosEmReal.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})

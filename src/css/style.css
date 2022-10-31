@@ -87,6 +87,7 @@ select {
     margin: auto;
     border-collapse: collapse;
     color: #000000;
+    font-weight: bold;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.637);
 }
 

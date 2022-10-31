@@ -42,16 +42,7 @@
                     </div>
                     <div class="box-interno">
                         <label for="porcentagem">Porcentagem da multa:</label>
-                        <select name="porcentagem" id="lista-multa" required>
-                            <option value="0">Selecione</option>
-                            <option value="0.02">2%</option>
-                            <option value="0.05">5%</option>
-                            <option value="0.1">10%</option>
-                            <option value="0.15">15%</option>
-                            <option value="0.2">20%</option>
-                            <option value="0.25">25%</option>
-                            <option value="0.3">30%</option>
-                        </select>
+                        <input onchange= Multa() type="number" name="porcentagem" id="lista-multa" placeholder="Número em porcentagem" required>
                         <div class="quadrado"> <img src="src/img/porcentagem.png" alt=""></div>
                     </div>
                 </div>
@@ -73,15 +64,15 @@
                         </tr>
                         <tr class="cinza">
                             <td>Valor total da multa:</td>
-                            <td id="valorMulta">R$ 0</td>
+                            <td id="valorMulta">R$ 0,00</td>
                         </tr>
                         <tr>
                             <td>Valor total dos juros:</td>
-                            <td id="juros">0</td>
+                            <td id="juros">R$ 0,00</td>
                         </tr>
                         <tr class="cinza">
                             <td>Valor total do boleto:</td>
-                            <td id="valor">0</td>
+                            <td id="valor">R$ 0,00</td>
                         </tr>
                     </tbody>
                 </table>

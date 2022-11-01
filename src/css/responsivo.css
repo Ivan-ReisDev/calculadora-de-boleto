@@ -1,31 +1,31 @@
-@media (max-width: 1145px)
-{
- .box-left {
-    width: 65vw;
- }
+@media (max-width: 71.5625em) {
+    .box-left {
+        width: 65vw;
+    }
 
- .box-right {
-    width: 35vw;
- }
+    .box-right {
+        width: 35vw;
+    }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
     .box-right {
         display: none;
-    } 
+    }
 
     .box-left {
         width: 100vw;
-     }
+    }
 }
 
-@media (max-width: 600px) {
-    .box-center{ 
+@media (max-width: 37.5em) {
+    .box-center {
         flex-direction: column;
-        min-height: 450px;
+        min-height: 28.125em;
     }
+
     .logo {
-        max-width: 300px;
+        max-width: 18.75em;
         margin-top: 1em;
     }
 }

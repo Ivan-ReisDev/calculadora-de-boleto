@@ -4,6 +4,16 @@ var dataP = '0';
 var dataV = '0';
 var days = 0;
 
+function LimpaInput(){
+  const campoVencimento = document.querySelector('#vencimento');
+  const campoPagamento = document.querySelector('#pagamento')
+  const campoLista = document.querySelector('#lista-multa')
+  const campoBoleto = document.querySelector('#valor-boleto')
+  campoVencimento.value = '';
+  campoPagamento.value = '';
+  campoLista.value = '';
+  campoBoleto.value = '';
+}
 
 function Vencimento(){
     

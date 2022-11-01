@@ -6,7 +6,7 @@
 - CSS3
 - Javascript
 
-![Captura de Tela (316)](https://user-images.githubusercontent.com/109477902/199227143-8446aa20-4904-4d91-9664-f7c41b7d0152.png)
+![calculadora-de-boleto](https://user-images.githubusercontent.com/109477902/199228229-add1033e-a41a-4afa-bda6-7242348e5824.jpg)
 
 
 <div> 

@@ -90,7 +90,13 @@ function calcularDias(){
 
 }
 
-
+document.onkeydown = teclado 
+function teclado(e) {
+  if(e.keyCode == 13){
+    Multa();
+    calcularDias();
+  }
+}
 
 
 

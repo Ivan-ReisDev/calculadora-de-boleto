@@ -35,7 +35,8 @@ function Multa(){
 
 function ValorDoBoleto(){
   let valor = document.querySelector("#valor-boleto").value;
-  valoBoleto = Number(valor);
+  valoBoleto = parseFloat(valor.replace(',', '.'));
+  //valoBoleto = Number(valor);
 
 }
 

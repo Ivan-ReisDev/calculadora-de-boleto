@@ -21,37 +21,39 @@
         <div class="box-left">
             <img src="src/img/logo-calcule-aqui.png" alt="" class="logo">
 
-            <div class="box-center">
+            <div name="form_main" class="box-center" id="box-principal">
                 <div class="box-subinterno">
                     <div class="box-interno">
                         <label for="vencimento">Vencimento do boleto:</label>
-                        <input onchange=Vencimento() type="date" name="vencimento" id="vencimento" required>
+                        <input type="date" name="vencimento" id="vencimento" required>
                         <div class="quadrado"><img src="src/img/vencimento.png"  required alt=""></div>
                     </div>
 
                     <div class="box-interno">
                         <label for="valor-boleto">Valor do boleto:</label>
-                        <input onchange=ValorDoBoleto() type="number"  id="valor-boleto" placeholder="" required>
+                        <input type="text" id="valor-boleto" placeholder="" default="0,00" required>
                         <div class="quadrado"><img src="src/img/money.png" alt=""></div>
                     </div>
                 </div>
                 <div class="box-subinterno-um">
                     <div class="box-interno">
                         <label for="pagamento">Data para pagamento:</label>
-                        <input onchange= DataPagamento() type="date" name="pagamento" id="pagamento" placeholder="" required>
+                        <input type="date" name="pagamento" id="pagamento" placeholder="" required>
                         <div class="quadrado"> <img src="src/img/pagamento.png" alt=""></div>
                     </div>
                     <div class="box-interno">
                         <label for="porcentagem">Porcentagem da multa:</label>
-                        <input onchange= Multa() type="number" name="porcentagem" id="lista-multa" placeholder="Número em porcentagem" required>
+                        <input type="number" name="porcentagem" id="lista-multa" placeholder="Número em porcentagem" required>
                         <div class="quadrado"> <img src="src/img/porcentagem.png" alt=""></div>
                     </div>
                 </div>
             </div>
-          <button class="bnt" onclick="calcular()">Calcular</button>
-          <button class="bnt" onclick="LimpaInput()">Limpar</button>
+          <button class="bnt" id="calcular">Calcular</button>
+          <button class="bnt" id="limpar">Limpar</button>
             <div class="tabela">
 
+                
+                <button ></button>
                 <table class="tabela-inicio">
                     <thead>
                         <tr>

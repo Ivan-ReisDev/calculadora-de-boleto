@@ -1,94 +1,109 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+var MultaPorcentagemValor = 0;
+var valoBoleto = 0;
+var dataP = '0';
+var dataV = '0';
+var days = 0;
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="src/img/logoprincipal.png">
-    <link rel="stylesheet" href="src/css/normalize.css">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/responsivo.css">
+function LimpaInput(){
+  const campoVencimento = document.querySelector('#vencimento');
+  const campoPagamento = document.querySelector('#pagamento')
+  const campoLista = document.querySelector('#lista-multa')
+  const campoBoleto = document.querySelector('#valor-boleto')
+  campoVencimento.value = '';
+  campoPagamento.value = '';
+  campoLista.value = '';
+  campoBoleto.value = '';
+}
 
-    <title>Calcule aqui</title>
-</head>
+function Vencimento(){
+    
+    dataV = document.querySelector('input#vencimento').value;
+    dataV = new Date(dataV );
+  }
+  
+function DataPagamento(){
+    
+    dataP = document.querySelector('input#pagamento').value;
+    dataP =  new Date(dataP);
+}
+  
+function Multa(){
+    let Multa = document.querySelector('input#lista-multa').value;
+    MultaPorcentagemValor = Number(Multa) / 100;
 
-<body>
-    <main>
-        <div class="box-left">
-            <img src="src/img/logo-calcule-aqui.png" alt="" class="logo">
+}
 
-            <div class="box-center" onkeydown="teclado()">
-                <div class="box-subinterno">
-                    <div class="box-interno">
-                        <label for="vencimento">Vencimento do boleto:</label>
-                        <input onchange=Vencimento() type="date" name="vencimento" id="vencimento" required>
-                        <div class="quadrado"><img src="src/img/vencimento.png"  required alt=""></div>
-                    </div>
+function ValorDoBoleto(){
+  let valor = document.querySelector("#valor-boleto").value;
+  valoBoleto = Number(valor);
 
-                    <div class="box-interno">
-                        <label for="valor-boleto">Valor do boleto:</label>
-                        <input onchange=ValorDoBoleto() type="number"  id="valor-boleto" placeholder="" required>
-                        <div class="quadrado"><img src="src/img/money.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="box-subinterno-um">
-                    <div class="box-interno">
-                        <label for="pagamento">Data para pagamento:</label>
-                        <input onchange= DataPagamento() type="date" name="pagamento" id="pagamento" placeholder="" required>
-                        <div class="quadrado"> <img src="src/img/pagamento.png" alt=""></div>
-                    </div>
-                    <div class="box-interno">
-                        <label for="porcentagem">Porcentagem da multa:</label>
-                        <input onchange= Multa() type="number" name="porcentagem" id="lista-multa" placeholder="Número em porcentagem" required>
-                        <div class="quadrado"> <img src="src/img/porcentagem.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-          <button class="bnt" id="gerar" onclick="calcular()">Calcular</button>
-          <button class="bnt" onclick="LimpaInput()">Limpar</button>
-            <div class="tabela">
+}
 
-                
-                <button ></button>
-                <table class="tabela-inicio">
-                    <thead>
-                        <tr>
-                            <th>Situação</th>
-                            <th>Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Dias em atraso:</td>
-                            <td id="diasAtras">0</td>
-                        </tr>
-                        <tr class="cinza">
-                            <td>Valor total da multa:</td>
-                            <td id="valorMulta">R$ 0,00</td>
-                        </tr>
-                        <tr>
-                            <td>Valor total dos juros:</td>
-                            <td id="juros">R$ 0,00</td>
-                        </tr>
-                        <tr class="cinza">
-                            <td>Valor total do boleto:</td>
-                            <td id="valor">R$ 0,00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
-        </div>
+function calcularDias(){
+   //juros
+   const jrs = document.getElementById('juros')
+     
+   const diasAtrasados = document.getElementById('diasAtras')
+ 
+   //diferença de dias
+   let total = (dataP - dataV);
+   let totalT = 1000 * 60 * 60 * 24;
+   days = total / totalT;
 
-        <div class="box-right">
+     //multa
+     const valorM = document.getElementById('valorMulta');
 
-        </div>
-    </main>
+     //valorBoleto
+     const valor2 = document.getElementById('valor');
+   
+     //valo total de multa
+     let valorTotalMulta = MultaPorcentagemValor * valoBoleto;
+     valorM.textContent = valorTotalMulta.toFixed(2);
+     valorM.textContent = valorTotalMulta.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})
 
-    <script src="src/javascript/main.js"></script>
-</body>
-</html>
+     //valor total boleto
+     var somaMultaBoleto = (valorTotalMulta + valoBoleto);
+     let jurosTotal = (100 * 1/100/30 * days)
+     let JurosEmReal = jurosTotal * valoBoleto / 100;
+     let total1 = somaMultaBoleto + JurosEmReal;
+     valor2.textContent = total1.toFixed(2);  
+     valor2.textContent = total1.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})
+    
+
+   if(days <= 0){
+    diasAtrasados.textContent = 0;
+    let jurosTotal = (100 * 1/100/30 * 0)
+    jrs.textContent = jurosTotal.toFixed(2);
+    jrs.textContent = jurosTotal.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})
+   }
+   else{
+    diasAtrasados.textContent = Math.abs(days);
+    let jurosTotal = (100 * 1/100/30 * days)
+    let JurosEmReal = valoBoleto * jurosTotal / 100;
+    jrs.textContent = JurosEmReal.toFixed(2);
+    jrs.textContent = JurosEmReal.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'})
+    console.log('Total Juros', jurosTotal);
+ 
+   }
+
+
+}
+
+
+
+
+
+
+const calcular = () =>{
+  calcularDias();
+  Multa();
+}
+
+
+
+
+
+
+
+

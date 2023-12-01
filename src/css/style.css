@@ -10,6 +10,7 @@ body {
 
 main {
     display: flex;
+    flex-direction: row;
 }
 
 label {
